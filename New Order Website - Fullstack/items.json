@@ -1,0 +1,43 @@
+{
+    "vinyls": [
+        {
+            "id": 1,
+            "name": "Power, Corruption & Lies",
+            "price": 1500,
+            "imgName": "power-corruption-lies-album.jpg"
+        },
+        {
+            "id": 2,
+            "name": "Blue Monday",
+            "price": 1700,
+            "imgName": "blue-monday-album.jpg"
+        },
+        {
+            "id": 3,
+            "name": "Low Life",
+            "price": 1500,
+            "imgName": "low-life-album.jpg"
+        },
+        {
+            "id": 4,
+            "name": "Substance",
+            "price": 2000,
+            "imgName": "substance-album.jpg"
+        }
+    ],
+    "merch": [
+        {
+            "id": 5,
+            "name": "Factory Records Sweatshirt",
+            "price": 2500,
+            "imgName": "factory-records-sweatshirt.jpg"
+        },
+        {
+            "id": 6,
+            "name": "Power, Corruption & Lies T-Shirt",
+            "price": 2500,
+            "imgName": "power-corruption-lies-tshirt.png"
+        }
+
+    ]
+}

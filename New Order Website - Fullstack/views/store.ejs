@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>New Order | About</title>
+        <meta charset="UTF-8">
+        <meta name="description" content="80s electronic rock band">
+        <link rel="stylesheet" href="styles.css">
+        <script src="https://checkout.stripe.com/checkout.js" defer></script>
+        <script>
+            var stripePublicKey = '<%= stripePublicKey %>';
+        </script>
+        <script src="store.js" defer></script>
+    </head>
+    <body>
+        <header class="main-header"> <!-- This is a header marker,wraps content inside a header -->
+            <nav class="nav main-nav"> <!-- Navigation section of this webpage -->
+                <ul> <!-- unordered list -->
+                    <li><a href="/home">HOME</a></li> <!-- list item,can be used inside an ul or ol(ordered list) -->
+                    <li><a href="/store">STORE</a></li>
+                    <li><a href="/about">ABOUT</a></li>
+                </ul>
+            </nav>
+            <h1 class="band-name band-name-large">New Order</h1> <!-- Heading element, 1(Highest) to 6(Smallest) -->
+        </header>
+
+        <!--ALBUMS-->
+        <section class="container content-section">
+            <h2 class="section-header">VINYLS</h2>
+
+            <!--Shop Items list-->
+            <div class="shop-items">  
+                <% items.vinyls.forEach(function(item){ %>
+                    <div class="shop-item" data-item-id="<%= item.id %>"> 
+                        <span class="shop-item-title"><%= item.name %></span>
+                    <img  class="shop-item-image" src="image_resources/albums/<%= item.imgName %>" alt="Power,Corruption & Lies" width="256" height="256">
+                    <div class="shop-item-details">
+                        <span class="shop-item-price">&euro;<%= item.price / 100 %></span>
+                        <button class="btn btn-primary shop-item-button" role="button">Add to Cart</button>
+                    </div>
+                </div>
+                <% }) %>    
+            </div>
+            <!--Shop Items list-->
+        </section>
+
+        <!--MERCH-->
+        <section  class="container content-section">
+            <h2 class="section-header">MERCH</h2>
+            <div class="shop-items">
+                <% items.merch.forEach(function(item) { %>
+                    <div class="shop-item" data-item-id="<%= item.id %>"> <!--Merch item-->
+                        <span class="shop-item-title"><%= item.name %></span>
+                        <img class="shop-item-image" src="image_resources/merch/<%= item.imgName %>" alt="<%= item.name %>" width="256" height="256">
+                        <div class="shop-item-details">
+                            <span class="shop-item-price">&euro;<%= item.price / 100 %></span>
+                            <button class="btn btn-primary shop-item-button" role="button">Add to Cart</button>
+                        </div>
+                    </div>
+
+               <% }) %>
+            </div>
+        </section>
+
+        <!--SHOPPING CART-->
+        <section class="container content-section">
+            
+            <h2 class="section-header">CART</h2>
+            <div class="cart-row">
+                <span class="cart-item cart-header cart-column">ITEM</span>
+                <span class="cart-price cart-header cart-column">PRICE</span>
+                <span class="cart-quantity cart-header cart-column">QUANTITY</span>
+            </div>
+            
+            <div class="cart-items">
+                <!--<div class="cart-row">
+                    <div class="cart-item cart-column">
+                        <img class="cart-item-image" src="image_resources/albums/power-corruption-lies-album.jpg" alt="" width="64" height="64">
+                        <span class="cart-item-title">Power, Corruption & Lies Vinyl</span>
+                    </div>
+                    <span class="cart-price cart-column">&euro;15</span>
+                    <div class="cart-quantity cart-column">
+                        <input class="cart-quantity-input" type="number" value="1">
+                        <button class="btn btn-quantity-remove" role="button">Remove From Cart</button>
+                    </div>
+                </div>
+                
+                <div class="cart-row">
+                    <div class="cart-item cart-column">
+                        <img class="cart-item-image" src="image_resources/merch/new-order-factory-records-sweatshirt.jpg" alt="" width="64" height="64">
+                        <span class="cart-item-title">Factory Records Sweatshirt</span>
+                    </div>
+                    <span class="cart-price cart-column">&euro;25</span>
+                    <div class="cart-quantity cart-column">
+                        <input class="cart-quantity-input" type="number" value="2">
+                        <button class="btn btn-quantity-remove" role="button">Remove From Cart</button>
+                    </div>
+                </div>  -->
+                
+            </div>
+
+            <div class="cart-total"><!--Total-->
+                <strong class="cart-total-title">Total</strong>
+                <span class="cart-total-price">&euro;0</span>
+            </div>
+                <button class="btn btn-primary btn-purchase" role="button">Purchase</button>
+            
+            
+        </section>
+        
+
+        <footer class="main-footer">
+            <div class="container main-footer-container">
+            <h3 class="band-name">New Order</h3>
+            <ul class="nav footer-nav">
+                <li>
+                    <a href="https://open.spotify.com/artist/0yNLKJebCb8Aueb54LYya3">
+                        <img src="image_resources/spotify_icon.png" alt="spotify" width="32" height="32">
+                    </a>
+                </li>
+                <li>
+                    <a href="https://music.youtube.com/channel/UCXExK7We8VKsIzFFQYNEgBg">
+                        <img src="image_resources/youtube-music-logo.png" alt="youtube music" width="32" height="32">
+                    </a>
+                </li>
+            </ul>
+        </div>
+        </footer>
+    </body>
+</html>
